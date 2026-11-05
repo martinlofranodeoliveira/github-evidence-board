@@ -4,6 +4,8 @@ Development version **0.1.0** — an offline-first browser workbench and Node CL
 
 Inspect engineering evidence across public GitHub repositories using explicit, auditable snapshot assertions. The tool separates CI verdicts, age, license metadata and documentation presence. It does **not** authenticate imported snapshots, certify security or compliance, or establish commercial or tender eligibility. Synthetic demo names are fictional and are not claims about real repositories or users.
 
+[Open the hosted demo](https://martinlofranodeoliveira.github.io/github-evidence-board/). Static files were checked over HTTPS against the reviewed source; visual layout, browser behavior and assistive technology checks remain pending. See [DESIGN.md](DESIGN.md) for the verification scope.
+
 ## Run locally
 
 Requires Node **22 or later**. There are no runtime or development dependencies, build step, model calls, API keys, or installation scripts. After obtaining the project files:

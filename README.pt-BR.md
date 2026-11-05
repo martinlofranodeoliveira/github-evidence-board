@@ -4,6 +4,8 @@ Versão de desenvolvimento **0.1.0**, da [Lofrano Tecnologia](https://lofranotec
 
 O painel separa estado de CI, idade do snapshot, metadados de licença e presença de documentação. Snapshots importados são afirmações do usuário, **não evidências autenticadas independentemente**. O software não certifica segurança, conformidade, qualidade ou elegibilidade comercial ou em licitações. Os nomes da demonstração são fictícios, sem afirmações sobre usuários ou repositórios reais.
 
+[Abrir a demo publicada](https://martinlofranodeoliveira.github.io/github-evidence-board/). Os arquivos estáticos foram conferidos por HTTPS contra o código revisado; a validação visual, o comportamento em navegador e as tecnologias assistivas continuam pendentes. Veja o escopo em [DESIGN.md](DESIGN.md).
+
 ## Executar localmente
 
 Requer Node **22 ou posterior**. Não há dependências, compilação, modelos, chaves de API ou scripts de instalação. Com os arquivos do projeto disponíveis:
