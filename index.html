@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src https://api.github.com; object-src 'none'; base-uri 'none'">
+  <title>GitHub evidence board — Lofrano Tecnologia</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <script type="module" src="./assets/app.mjs"></script>
+</head>
+<body><!-- THESIS: modular working bays connect exact input to inspected result.
+OWN-WORLD: pale cool-gray surface, ink-blue rail, teal active controls, measured native labels.
+STORY: load a synthetic case or local input, inspect a result, recover from errors, export.
+FIRST VIEWPORT: title/action rail then the actual editable task and result; no marketing hero.
+FORM: network patch panel, candidate6, seed11f6c49b.
+FINISH: source and simulated DOM inspected; rendering unverified. See DESIGN.md and docs/contract.md. -->
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <header class="rail">
+    <div>
+      <p><a href="https://lofranotecnologia.com.br">Lofrano Tecnologia</a> · Development 0.1.0</p>
+      <h1>GitHub evidence board</h1>
+      <p>Inspect point-in-time evidence, not eligibility.</p>
+    </div>
+    <nav class="actions" aria-label="Dataset and audit reports">
+      <button id="demo" type="button">Reset synthetic demo</button>
+      <button id="export-json" type="button">Export JSON</button>
+      <button id="export-markdown" type="button">Export Markdown</button>
+    </nav>
+  </header>
+  <main id="workspace" tabindex="-1">
+    <p class="notice">Snapshot assertions are not independently authenticated. A green verdict is limited to the supplied workflow inventory, source SHA, time and TTL. It does not certify quality, security, compliance or contract eligibility. Check source repositories before relying on evidence.</p>
+    <section id="errors" class="errors" role="alert" aria-labelledby="errors-title" tabindex="-1" hidden>
+      <h2 id="errors-title">Operation not applied</h2>
+      <ul id="error-list"></ul>
+    </section>
+    <div class="bays">
+      <section class="input-bay" aria-labelledby="input-title">
+        <div class="bay-heading">
+          <h2 id="input-title">Snapshot input</h2>
+          <p id="origin">Synthetic demo</p>
+        </div>
+        <div class="input-content">
+          <label for="file">Open local UTF-8 JSON</label>
+          <input id="file" type="file" accept=".json,application/json" aria-describedby="file-help">
+          <p id="file-help" class="help">Local only. Opening a file fills the editor; Apply validates it. Limit: 1 MiB and 100 repositories.</p>
+          <form id="snapshot-form">
+            <label for="editor">Editable snapshot JSON</label>
+            <textarea id="editor" maxlength="1048576" spellcheck="false" aria-describedby="editor-help editor-error" aria-invalid="false"></textarea>
+            <p id="editor-help" class="help">Evaluation time and TTL are explicit fields. No time advances automatically. Invalid edits never replace the loaded evidence.</p>
+            <p id="editor-error" class="field-error"></p>
+            <button class="primary" type="submit">Apply snapshot</button>
+          </form>
+        </div>
+      </section>
+      <section class="result-bay" aria-labelledby="results-title">
+        <div class="bay-heading">
+          <h2 id="results-title" tabindex="-1">Repository evidence</h2>
+          <p id="evaluation"></p>
+        </div>
+        <div class="filters" role="search" aria-label="Filter repository evidence">
+          <div><label for="search">Search repositories</label><input id="search" type="search" maxlength="240" placeholder="Name, description or language"></div>
+          <div><label for="status-filter">CI verdict</label><select id="status-filter"><option value="all">All verdicts</option></select></div>
+          <div><label for="language-filter">Language</label><select id="language-filter"><option value="">All languages</option></select></div>
+        </div>
+        <div class="filter-footer"><p id="result-count"></p><button id="clear-filters" type="button">Clear filters</button></div>
+        <div class="table-wrap" tabindex="0" aria-label="Repository evidence table; scroll horizontally on small screens">
+          <table>
+            <caption>Choose a repository to inspect its source, timestamps and exact supplied evidence.</caption>
+            <thead><tr><th scope="col">Repository / language</th><th scope="col">CI verdict</th><th scope="col">Age</th><th scope="col">Metadata</th></tr></thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+        <p id="empty" class="empty" hidden>No repositories match these filters. Clear filters or adjust the search to recover the loaded view.</p>
+        <p id="state-counts" class="counts"></p>
+      </section>
+    </div>
+    <p id="announcements" class="status-line" role="status" aria-live="polite" aria-atomic="true"></p>
+    <noscript>This tool requires local JavaScript modules. The Node CLI can inspect the same snapshots without a browser.</noscript>
+  </main>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <header class="drawer-header"><h2 id="detail-title">Repository detail</h2><button id="close-detail" type="button">Close detail</button></header>
+    <div id="detail-body" class="drawer-body"></div>
+    <section class="drawer-actions" aria-label="Optional public API refresh">
+      <button id="refresh" class="primary" type="button" aria-describedby="api-note">Refresh this repository from GitHub</button>
+      <p id="api-note">Explicit opt-in: contacts api.github.com without credentials. Reads the public default-branch head, workflow inventory and current-head runs. Bounded pagination may leave evidence incomplete. Documentation files are not fetched. Refresh changes evaluation time for the whole snapshot.</p>
+      <p id="detail-status" role="status" aria-live="polite" tabindex="-1"></p>
+    </section>
+  </dialog>
+  <footer>Offline by default. Synthetic names are fictional, not portfolio claims. <a href="./docs/contract.md">Snapshot and verdict contract</a> · <a href="https://lofranotecnologia.com.br">General contact</a></footer>
+</body>
+</html>

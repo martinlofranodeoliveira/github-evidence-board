@@ -1,0 +1,20 @@
+{
+  "name": "github-evidence-board",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline-first inspection of repository evidence snapshots",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "author": "Lofrano Tecnologia",
+  "license": "MIT",
+  "homepage": "https://lofranotecnologia.com.br",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinlofranodeoliveira/github-evidence-board"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node ./bin/evidence-board.mjs demo",
+    "serve": "node ./scripts/serve.mjs"
+  }
+}
